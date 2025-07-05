@@ -1,9 +1,11 @@
 const express = require("express")
 const app = express();
 const port = 3230;
-
+const cors = require('cors');
 // serve the static files from the dist folder inside frontend directory
 app.use(express.static('../frontend.dist'))
+
+app.use(cors()); // Allow all origins
 
 
 app.get('/',(req, res)=>{
